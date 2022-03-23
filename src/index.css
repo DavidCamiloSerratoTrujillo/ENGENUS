@@ -1,0 +1,11 @@
+.Container {
+    margin-top: 150px;
+    height: 150px;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Contend{
+    width: 350px;
+}

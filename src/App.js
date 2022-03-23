@@ -1,9 +1,9 @@
 
-import Table from './components/Table'
+import TablaCitys from './components/TablaCitys'
 const  App = () =>{
   return (
     <>
-      <Table/>
+      <TablaCitys/>
     </>
   );
 }
