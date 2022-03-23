@@ -1,10 +1,10 @@
 
-
-function App() {
+import Table from './components/Table'
+const  App = () =>{
   return (
-    <div className="App">
-      <p>Hola</p>
-    </div>
+    <>
+      <Table/>
+    </>
   );
 }
 
