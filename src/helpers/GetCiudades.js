@@ -1,4 +1,9 @@
-export const GetCiudades = async(dat) =>{
+export const GetCiudades = async() =>{
+    const dat = {
+        User: 'etraining',
+        Password: 'explorandoando2020%',
+        option: 'municipios'
+        }
     const url = 'https://www.php.engenius.com.co/DatabaseIE.php';
     const config =  {
         method: 'POST',

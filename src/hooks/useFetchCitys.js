@@ -1,19 +1,21 @@
 import { useState,useEffect } from "react";
 import { GetCiudades } from "../helpers/GetCiudades";
 export const useFetchCitys = () =>{
-    const dat = {
-        User: 'etraining',
-        Password: 'explorandoando2020%',
-        option: 'municipios'
-        }
+    
 
-    const [ciudades,setCiudades]=useState([]);
+        const[state,setState] = useState({
+            data:[],
+            loading:true,
+        });
+
+
         useEffect(()=>{
 
-            GetCiudades(dat).then(response => {
-                setCiudades([...response]);
+            GetCiudades().then(response => {
+                setState({data:[...response],loading:false});
                });
         },[]);
-   return(ciudades);
+    
+   return(state);
     
 }

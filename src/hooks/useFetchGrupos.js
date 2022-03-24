@@ -1,13 +1,16 @@
 import { useState,useEffect } from "react";
 import { GetGrupos } from "../helpers/GetGrupos";
 export const useFetchGrupos = (cod) =>{
-    
-    const [grupos,setGrupos]=useState([]);
+    const[state,setState] = useState({
+        data:[],
+        loading:true,
+    });
+  
         useEffect(()=>{
 
             GetGrupos (cod).then(response => {
-                setGrupos([...response]);
+                setState({data:[...response],loading:false});
                });
         },[cod]);
-   return(grupos);
+   return(state);
 }

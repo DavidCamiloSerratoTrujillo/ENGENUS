@@ -1,13 +1,16 @@
 import { useState,useEffect } from "react";
 import { GetSedes } from "../helpers/GetSedes";
 export const useFetchSedes = (cod) =>{
-    
-    const [sedes,setSedes]=useState([]);
+    const[state,setState] = useState({
+        data:[],
+        loading:true,
+    });
+
         useEffect(()=>{
 
             GetSedes (cod).then(response => {
-                setSedes([...response]);
+                setState({data:[...response],loading:false});
                });
         },[cod]);
-   return(sedes);
+   return(state);
 }

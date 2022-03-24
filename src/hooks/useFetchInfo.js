@@ -1,13 +1,16 @@
 import { useState,useEffect } from "react";
 import { GetInfo } from "../helpers/GetInfo";
 export const useFetchInfo = (cod) =>{
-    
-    const [info,setInfo]=useState([]);
+    const[state,setState] = useState({
+        data:[],
+        loading:true,
+    });
+   
         useEffect(()=>{
 
             GetInfo (cod).then(response => {
-                setInfo([...response]);
+                setState({data:[...response],loading:false});
                });
         },[cod]);
-   return(info);
+   return(state);
 }
