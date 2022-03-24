@@ -1,10 +1,11 @@
 
-
-function App() {
+import TablaCitys from './components/TablaCitys'
+const  App = () =>{
   return (
-    <div className="App">
-      <p>Hola</p>
-    </div>
+    <>
+
+      <TablaCitys/>
+    </>
   );
 }
 
